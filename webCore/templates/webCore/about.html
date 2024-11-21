@@ -1,25 +1,25 @@
 {% load static %}
 
-<h2>Acerca de mí</h2>
-<div class="row" style="margin-top: 5%;">
+<h2 class="text-center mb-5">Acerca de mí</h2>
+    <div class="row align-items-center">
     <!-- Texto a la izquierda -->
     <div class="col-md-8">
         <h1 id="nombre" class="typing-effect">Bryan Becerra</h1>
-        <p id="descripcion" >
+        <p id="descripcion">
             <strong>Edad:</strong> 30 años
             <strong>Ubicación:</strong> Santiago, Chile<br>
         </p>
         <p id="texto">
-            Analista Programador Computacional recién egresado de Duoc UC con una destacada trayectoria académica y experiencia en
-            desarrollo de aplicaciones móviles y web. Competente en tecnologías como Angular, Python, y Java, con habilidades para trabajar
-            en equipo y gestionar proyectos de forma eficiente. <br>
-            He realizado cursos de automatización con UiPath y forme parte de "Oracle Next Generation, ProgramaOne".
-        </p>
-        <p id="detalles">
-            <strong>Idiomas:</strong> Español (nativo), Inglés (intermedio)<br>
-            <strong>Intereses:</strong> Desarrollo web, programación móvil, bases de datos, metodologías ágiles<br>
-            <strong>Disponibilidad:</strong> Tiempo completo<br>
-        </p>
+                Soy un analista programador computacional recién egresado de Duoc UC con una destacada trayectoria académica y experiencia
+                en desarrollo de aplicaciones móviles y web. Me considero competente en tecnologías como Angular, Python, y Java, con habilidades
+                para trabajar en equipo y gestionar proyectos de forma eficiente. He realizado cursos de automatización con UiPath y forme parte
+                de "Oracle Next Generation, ProgramaOne".
+            </p>
+            <p id="detalles">
+                <strong>Idiomas:</strong> Español (nativo), Inglés (intermedio)<br>
+                <strong>Intereses:</strong> Desarrollo web, programación móvil, bases de datos, metodologías ágiles<br>
+                <strong>Disponibilidad:</strong> Inmediata - Tiempo completo
+            </p>
     </div>
 
     <!-- Redes sociales a la derecha -->
@@ -37,10 +37,11 @@
 
             <!-- Botón para descargar CV -->
             <div class="mt-3">
-                <a href="{% static 'docs/CV.pdf' %}" class="btn btn-success" download>
-                    <i class="bi bi-file-earmark-download"></i> Descargar CV
+                <a href="{% static 'docs/CV.pdf' %}" class="btn btn-success d-flex align-items-center" download>
+                    <i class="bi bi-file-earmark-arrow-down me-2"></i> Descargar CV
                 </a>
             </div>
+
         </div>
     </div>
 </div>

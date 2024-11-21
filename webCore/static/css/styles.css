@@ -14,7 +14,14 @@ body {
     /* Cambiar el color del texto si es necesario */
     padding-top: 8%;
     /* Ajusta este valor según el tamaño de tu navbar */
+    font-family: 'Roboto', sans-serif;
+    /* Cambiar la fuente si es necesario */
 }
+
+h1, h2, h3, p, a {
+    font-family: 'Roboto', sans-serif;
+}
+
 
 /* Estilo para el navbar */
 .navbar-nav {
@@ -116,9 +123,55 @@ body {
 
 /* Style the back side */
 .flip-card-back {
-    background-color: white;
-    color: black;
+    background-color: gray;
+    color: white;
     transform: rotateY(180deg);
 }
 
+.badge-django {
+    background-color: #092E20;
+    color: #FFFFFF;
+}
+.badge-html {
+    background-color: #E34C26;
+    color: #FFFFFF;
+}
+.badge-css {
+    background-color: #264DE4;
+    color: #FFFFFF;
+}
+.badge-javascript {
+    background-color: #F7DF1E;
+    color: #000000;
+}
 
+/* Estilo adicional para la sección de contacto */
+#contacto h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#contacto p {
+    font-size: 1.2rem;
+    color: #d3d3d3;
+}
+
+#contacto form {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+#contacto .form-control {
+    border-radius: 5px;
+}
+
+#contacto .btn-primary {
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+}
+
+#contacto .btn-primary:hover {
+    background-color: #2980b9;
+}
