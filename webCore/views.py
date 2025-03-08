@@ -28,7 +28,7 @@ projects = [
         "image": "img/mini/PokeWeb.jpg",
         "description": "Proyecto realizado con la PokeApi. Se trata de una web que muestra información de los Pokémon.",
         "github_url": "https://github.com/BryanBece/PokeWeb",
-        "demo_url": "http://127.0.0.1:3000/pokeWeb/",
+        "demo_url": "https://portfoliobryanbece.pythonanywhere.com/pokeWeb/",
         "tools": ["Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
     },
     {
