@@ -1,117 +1,110 @@
-body {
-    background-color: #f5c556; /* Cambia este valor al color que prefieras */
+
+:root {
+  --primary-color: #ff5350;
+  --secondary-color: #2a75bb;
+  --background: #f5f5f5;
+  --card-bg: #ffffff;
 }
 
-/* Logo de Pokémon */
+body {
+  background: var(--background);
+  font-family: 'Press Start 2P', system-ui;
+}
+
 .pokemon-logo {
-    max-width: 100%;  /* Asegura que el logo no exceda el ancho de su contenedor */
-    height: auto;     /* Mantiene la relación de aspecto */
-    margin-bottom: 20px; /* Espacio entre el logo y los elementos de abajo */
+  max-width: 300px;
+  height: auto;
+  margin: 2rem auto;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.pokemon-logo:hover {
+  transform: scale(1.05);
+}
+
+.card-custom {
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .pokemon-sprite {
-    width: 100px; /* Ajusta el ancho que prefieras */
-    height: auto;
-    margin: 10px auto; /* Centra la imagen horizontalmente */
-    display: block;
+  width: 150px;
+  height: 150px;
+  margin: 1rem auto;
+  transition: transform 0.3s ease;
+  image-rendering: pixelated;
 }
 
-
-/* Contenedor de tipo estilo pixelado */
-.type-badge {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
-    text-align: center;
-    border: 2px solid #333;
-    box-shadow: inset -2px -2px 0px rgba(0, 0, 0, 0.5), 2px 2px 0px rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+.pokemon-sprite:hover {
+  transform: scale(1.2);
 }
 
-/* Colores por tipo */
-.type-bicho { background-color: #A8B820; }       
-.type-siniestro { background-color: #705848; }      
-.type-dragón { background-color: #7038F8; }    
-.type-eléctrico { background-color: #F8D030; }  
-.type-lucha { background-color: #C03028; }  
-.type-fuego { background-color: #F08030; }       
-.type-volador { background-color: #A890F0; }     
-.type-fantasma { background-color: #705898; }      
-.type-planta { background-color: #78C850; }      
-.type-tierra { background-color: #E0C068; }     
-.type-normal { background-color: #A8A878; }      
-.type-veneno { background-color: #A040A0; }      
-.type-psíquico { background-color: #F85888; }    
-.type-roca { background-color: #B8A038; }        
-.type-acero { background-color: #B8B8D0; }       
-.type-agua { background-color: #6890F0; }       
-.type-hielo { background-color: #98D8D8; }         
-.type-hada { background-color: #EE99AC; }    
+#searchPokemon {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+#pokemonSearchInput {
+  background: var(--card-bg);
+  border: 2px solid var(--secondary-color);
+  padding: 1rem;
+  font-family: inherit;
+  border-radius: 25px 0 0 25px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateX(3px);
+}
 
 .modal-content {
-    background-color: #222; /* Color de fondo oscuro */
-    border: 4px solid #fff; /* Borde blanco grueso */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra suave */
-    font-family: 'Press Start 2P', cursive; /* Fuente pixelada */
-    color: #fff; /* Color del texto */
+  border-radius: 20px;
+  background: var(--card-bg);
 }
 
-.modal-header {
-    border-bottom: 2px solid #fff; /* Borde inferior blanco */
+.type-badge {
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
 }
 
-.modal-body {
-    background-color: #333; /* Fondo más oscuro para el cuerpo del modal */
+.type-badge:hover {
+  transform: scale(1.1);
 }
 
-/* Estilo para las tarjetas */
-.card-custom {
-    background-color: #f7d178; /* Color de fondo de las tarjetas */
-    border: 1px solid blanchedalmond; /* Borde opcional */
+#pokemonStats {
+  list-style: none;
+  padding: 0;
 }
 
-/* Centrar el contenido de la tarjeta */
-.card-body {
-    text-align: center; /* Centrar texto y contenido dentro de la tarjeta */
+#pokemonStats li {
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.05);
 }
 
-/* Estilo de la barra de búsqueda */
-#searchPokemon {
-    max-width: 350px; /* Establecer un ancho máximo */
-    margin: 0 auto; /* Centrar el contenedor de búsqueda */
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
 }
-
-/* Estilo para el campo de búsqueda */
-#pokemonSearchInput {
-    background-color: #f0d698; /* Color de fondo */
-    border-color: #f7d178; /* Color del borde */
-    border-top-left-radius: 30px; /* Bordes redondeados */
-    border-bottom-left-radius: 30px; /* Bordes redondeados */
-}
-
-/* Estilo para el botón de búsqueda */
-#pokemonSearchInput:focus {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Sombra en el foco */
-}
-
-/* Estilo para el botón de búsqueda */
-.btn-primary {
-    border-top-right-radius: 30px; /* Bordes redondeados */
-    border-bottom-right-radius: 30px; /* Bordes redondeados */
-}
-
-#DetailsButton {
-    background-color: #f7d178; /* Color de fondo */
-    border-color: #f7d178; /* Color del borde */
-}
-
-#DetailsButton:hover {
-    background-color: #f5c556; /* Color de fondo */
-    border-color: #f5c556; /* Color del borde */
-}
-
-/* Otros estilos permanecen igual... */

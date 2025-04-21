@@ -27,15 +27,24 @@
             </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             {% for pokemon in pokemon_list %}
             <div class="col">
-                <div class="card h-100 shadow-sm card-custom">
-                    <img class="card-img-top pokemon-sprite" id="sprite-{{ pokemon.name }}" src="" alt="Pokemon Sprite">
+                <div class="card h-100 card-custom">
+                    <div class="text-center">
+                        <img class="pokemon-sprite" 
+                             id="sprite-{{ pokemon.name }}" 
+                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                             data-pokemon="{{ pokemon.name }}"
+                             alt="{{ pokemon.name }} sprite"
+                             loading="lazy">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ pokemon.name|title }}</h5>
-                        <button class="btn btn-primary" id="DetailsButton" onclick="loadPokemonDetails('{{ pokemon.name }}')">
-                            ¡Haz clic para más detalles!
+                        <h5 class="card-title text-center mb-3">{{ pokemon.name|title }}</h5>
+                        <button class="btn btn-primary w-100" 
+                                onclick="loadPokemonDetails('{{ pokemon.name }}')"
+                                data-pokemon-btn="{{ pokemon.name }}">
+                            <i class="fas fa-info-circle me-2"></i>Ver detalles
                         </button>
                     </div>
                 </div>

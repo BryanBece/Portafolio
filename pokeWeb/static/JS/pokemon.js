@@ -43,12 +43,23 @@ function searchPokemon() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Llama a la función de carga de sprites cuando el contenido de la página esté listo
-    loadPokemonSprites();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadPokemonSprite(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+
+    document.querySelectorAll(".pokemon-sprite").forEach(img => {
+        observer.observe(img);
+    });
 });
 
-function loadPokemonSprites() {
-    const pokemonElements = document.querySelectorAll(".pokemon-sprite");
+function loadPokemonSprite(element) {
     pokemonElements.forEach(element => {
         const pokemonName = element.id.replace("sprite-", ""); // Extrae el nombre de Pokémon desde el id
         fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
