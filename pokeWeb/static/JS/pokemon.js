@@ -1,5 +1,5 @@
 function loadPokemonDetails(name) {
-    fetch(`/pokemon/${name.toLowerCase()}/`)
+    fetch(`/pokeWeb/pokemon/${name.toLowerCase()}/`)
         .then(response => response.json())
         .then(data => {
             if (data.error) {
