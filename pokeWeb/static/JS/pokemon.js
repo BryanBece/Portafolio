@@ -60,16 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadPokemonSprite(element) {
-    pokemonElements.forEach(element => {
-        const pokemonName = element.id.replace("sprite-", ""); // Extrae el nombre de Pokémon desde el id
-        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-            .then(response => response.json())
-            .then(data => {
-                const spriteUrl = data.sprites.front_default; // Obtiene la URL del sprite
-                element.src = spriteUrl; // Asigna la URL de la imagen al atributo src de la tarjeta
-                element.alt = `${pokemonName} sprite`; // Añade un alt descriptivo
-            })
-            .catch(error => console.error("Error al cargar el sprite de Pokémon:", error));
-    });
+    const pokemonName = element.dataset.pokemon;
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        .then(response => response.json())
+        .then(data => {
+            element.src = data.sprites.front_default;
+            element.alt = `${pokemonName} sprite`;
+        })
+        .catch(error => console.error("Error al cargar el sprite de Pokémon:", error));
 }
 

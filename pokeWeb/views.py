@@ -43,8 +43,9 @@ def pokemon_list(request):
     return render(request, 'pokemon/pokemon_list.html', {'pokemon_list': pokemon_list})
 
 def pokemon_detail(request, name):
-    url = f"https://pokeapi.co/api/v2/pokemon/{name}"
-    response = requests.get(url)
+    try:
+        url = f"https://pokeapi.co/api/v2/pokemon/{name.lower()}"
+        response = requests.get(url)
     
     if response.status_code == 200:
         pokemon_data = response.json()
@@ -92,5 +93,6 @@ def pokemon_detail(request, name):
             'stats': stats,  # Añadir estadísticas aquí
         })
     
-    return JsonResponse({'error': 'Pokémon no encontrado'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': 'Pokémon no encontrado'}, status=404)
 
