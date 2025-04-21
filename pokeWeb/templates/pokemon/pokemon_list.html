@@ -55,21 +55,43 @@
 
     <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content pokedex-entry">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="pokemonModalLabel">Detalles de Pokémon</h5>
+                    <h5 class="modal-title" id="pokemonModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <img id="pokemonSprite" src="" alt="Pokemon Sprite" class="mb-3" style="width: 200px; height: auto;">
-                    <p><strong>Tipo(s):</strong> <span id="pokemonTypes"></span></p>
-                    <p><strong>Generación:</strong> <span id="pokemonGeneration"></span></p>
-                    <p><strong>Fuerte contra:</strong> <span id="pokemonStrongAgainst"></span></p>
-                    <p><strong>Débil contra:</strong> <span id="pokemonWeakAgainst"></span></p>
-                    <hr>
-                    <h6>Estadísticas:</h6>
-                    <ul id="pokemonStats"></ul>
-                    <hr>
+                <div class="modal-body">
+                    <div class="pokemon-info-grid">
+                        <div class="pokemon-sprite-container">
+                            <img id="pokemonSprite" src="" alt="Pokemon Sprite" class="pokemon-detail-sprite">
+                        </div>
+                        <div class="pokemon-info-container">
+                            <div class="info-section">
+                                <div class="info-row">
+                                    <span class="info-label">Tipo(s):</span>
+                                    <span id="pokemonTypes" class="info-value"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Generación:</span>
+                                    <span id="pokemonGeneration" class="info-value"></span>
+                                </div>
+                            </div>
+                            <div class="battle-info">
+                                <div class="info-row">
+                                    <span class="info-label">Fuerte contra:</span>
+                                    <span id="pokemonStrongAgainst" class="info-value"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Débil contra:</span>
+                                    <span id="pokemonWeakAgainst" class="info-value"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-container">
+                        <h6 class="stats-title">Estadísticas:</h6>
+                        <ul id="pokemonStats" class="stats-list"></ul>
+                    </div>
                 </div>
             </div>
         </div>
