@@ -32,6 +32,14 @@ projects = [
         "tools": ["Django", "HTML", "CSS", "JavaScript", "Bootstrap"]
     },
     {
+        "name": "LoL Champions",
+        "image": "img/mini/LolWeb.jpg",
+        "description": "Proyecto realizado con la API de League of Legends. Muestra información detallada de los campeones del juego.",
+        "github_url": "https://github.com/BryanBece/LolWeb",
+        "demo_url": "https://portfoliobryanbece.pythonanywhere.com/lolWeb/",
+        "tools": ["Django", "HTML", "CSS", "JavaScript"]
+    },
+    {
         "name": "El Comilón",
         "image": "img/mini/ElComilon.jpg",
         "description": "Proyecto estudiantil. Se trata de una web para un local de comida rápida.",
