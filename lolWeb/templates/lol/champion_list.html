@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends Champions</title>
+    <link rel="stylesheet" href="{% static 'CSS/stylesLol.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img src="{% static 'images/lol-logo.png' %}" alt="LoL Logo" class="lol-logo">
+    </div>
+    
+    <div class="champions-grid">
+        {% for champion in champions %}
+        <div class="champion-card" onclick="showChampionDetails('{{ champion.id }}')">
+            <img src="{{ champion.image }}" alt="{{ champion.name }}">
+            <h3>{{ champion.name }}</h3>
+            <p>{{ champion.title }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="championModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="championDetails"></div>
+        </div>
+    </div>
+
+    <script src="{% static 'JS/lol.js' %}"></script>
+</body>
+</html>

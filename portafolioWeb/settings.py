@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webCore',
     'pokeWeb',
+    'lolWeb',
 ]
 
 MIDDLEWARE = [

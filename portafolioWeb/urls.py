@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webCore.urls')),
     path('pokeWeb/', include('pokeWeb.urls')),
+    path('lolWeb/', include('lolWeb.urls')),
 ]

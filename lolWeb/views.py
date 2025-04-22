@@ -1,0 +1,42 @@
+
+import requests
+from django.shortcuts import render
+
+def champion_list(request):
+    url = "http://ddragon.leagueoflegends.com/cdn/13.24.1/data/es_ES/champion.json"
+    response = requests.get(url)
+    champions = []
+
+    if response.status_code == 200:
+        data = response.json()
+        champions = [
+            {
+                'id': champ_data['id'],
+                'name': champ_data['name'],
+                'title': champ_data['title'],
+                'image': f"http://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{champ_data['id']}.png"
+            }
+            for champ_data in data['data'].values()
+        ]
+    
+    return render(request, 'lol/champion_list.html', {'champions': champions})
+
+def champion_detail(request, champion_id):
+    url = f"http://ddragon.leagueoflegends.com/cdn/13.24.1/data/es_ES/champion/{champion_id}.json"
+    response = requests.get(url)
+    champion = None
+
+    if response.status_code == 200:
+        data = response.json()
+        champion_data = data['data'][champion_id]
+        champion = {
+            'id': champion_data['id'],
+            'name': champion_data['name'],
+            'title': champion_data['title'],
+            'lore': champion_data['lore'],
+            'image': f"http://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/{champion_id}.png",
+            'spells': champion_data['spells'],
+            'stats': champion_data['stats']
+        }
+
+    return render(request, 'lol/champion_detail.html', {'champion': champion})

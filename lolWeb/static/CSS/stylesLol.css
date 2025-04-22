@@ -1,0 +1,84 @@
+
+body {
+    background-color: #091428;
+    color: #C8AA6E;
+    font-family: 'Beaufort for LOL', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #091428;
+    border-bottom: 2px solid #C8AA6E;
+}
+
+.lol-logo {
+    max-width: 300px;
+}
+
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.champion-card {
+    background: linear-gradient(to bottom, #1E2328, #091428);
+    border: 1px solid #C8AA6E;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.champion-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(200, 170, 110, 0.3);
+}
+
+.champion-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.champion-card h3 {
+    margin: 10px 0;
+    color: #F0E6D2;
+}
+
+.champion-card p {
+    color: #A09B8C;
+    font-size: 0.9em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: linear-gradient(to bottom, #1E2328, #091428);
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #C8AA6E;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+}
+
+.close {
+    color: #C8AA6E;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
