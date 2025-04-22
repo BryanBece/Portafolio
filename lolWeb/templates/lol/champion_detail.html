@@ -1,0 +1,33 @@
+
+<div class="champion-details">
+    <div class="champion-header">
+        <h2>{{ champion.name }} - {{ champion.title }}</h2>
+        <img src="{{ champion.image }}" alt="{{ champion.name }}" class="champion-portrait">
+    </div>
+    
+    <div class="champion-info">
+        <div class="champion-lore">
+            <h3>Historia</h3>
+            <p>{{ champion.lore }}</p>
+        </div>
+        
+        <div class="champion-stats">
+            <h3>Estadísticas</h3>
+            <ul>
+                {% for stat, value in champion.stats.items %}
+                <li><strong>{{ stat }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="champion-spells">
+            <h3>Habilidades</h3>
+            {% for spell in champion.spells %}
+            <div class="spell">
+                <h4>{{ spell.name }}</h4>
+                <p>{{ spell.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
